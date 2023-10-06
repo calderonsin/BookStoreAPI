@@ -4,10 +4,10 @@ using Microsoft.Extensions.Hosting;
 
 namespace BookStoreAPI.DbContext
 {
-    public class BookstoreDbContext : Microsoft.EntityFrameworkCore.DbContext
+    public class BookStoreDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
 
-    public BookstoreDbContext(DbContextOptions<BookstoreDbContext> options) : base(options)
+    public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : base(options)
     {
     }
 

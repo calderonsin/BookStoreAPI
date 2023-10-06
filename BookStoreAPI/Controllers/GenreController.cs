@@ -16,10 +16,10 @@ namespace BookStoreAPI.Controllers
     public class GenreController : ControllerBase
     {
 
-        private readonly BookstoreDbContext _context;
+        private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GenreController(BookstoreDbContext context,IMapper mapper)
+        public GenreController(BookStoreDbContext context,IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -27,9 +27,9 @@ namespace BookStoreAPI.Controllers
 
         // GET: api/genres
         [HttpGet]
-        public IActionResult GetGenres()
+        public async Task<IActionResult> GetGenres()
         {
-            var genres = _context.Genres.ToList();
+            var genres = await _context.Genres.ToListAsync();
             var genresDTO = _mapper.Map<List<GenreDTO>>(genres);
             return Ok(genresDTO);
         }

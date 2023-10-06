@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStoreAPI.Migrations
 {
-    [DbContext(typeof(BookstoreDbContext))]
+    [DbContext(typeof(BookStoreDbContext))]
     partial class BookstoreDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

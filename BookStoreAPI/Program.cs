@@ -14,7 +14,7 @@ builder.Services.AddControllers()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<BookstoreDbContext>(options =>
+builder.Services.AddDbContext<BookStoreDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),serverVersion));
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
