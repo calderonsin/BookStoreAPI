@@ -1,5 +1,6 @@
 ﻿using BookStoreAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace BookStoreAPI.DbContext
 {
@@ -19,7 +20,12 @@ namespace BookStoreAPI.DbContext
             modelBuilder.Entity<Book>()
                 .HasMany(b => b.Authors)
                 .WithMany(a => a.Books)
-                .UsingEntity<AuthorBook>();
+                .UsingEntity<AuthorBook>(
+                 l => l.HasOne<Author>(e => e.Author).WithMany(e => e.AuthorBooks),
+                 r => r.HasOne<Book>(e => e.Book).WithMany(e => e.AuthorBooks)
+                );      
+
+
 
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Genre)

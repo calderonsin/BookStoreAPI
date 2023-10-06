@@ -9,6 +9,7 @@
         public int QuantityAvailable { get; set; }
         public ICollection<Author> Authors { get; set; }
         public ICollection<AuthorBook> AuthorBooks { get; set; }
+
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
     }
